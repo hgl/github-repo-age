@@ -4,10 +4,10 @@ function getRepoAge(url, callback) {
 		if (xhr.readyState != 4) return;
 
 		if (xhr.status == 202) {
-				setTimeout(function () {
-						getRepoAge(url, callback);
-				}, 1000);
-				return;
+			setTimeout(function () {
+				getRepoAge(url, callback);
+			}, 1000);
+			return;
 		}
 
 		if (xhr.status != 200 || !xhr.responseText) return;
@@ -29,16 +29,16 @@ function insertRepoAge() {
 	var repoName = document.querySelector('.repohead .entry-title strong');
 	if (!repoName) return;
 
-		getRepoAge(url, function (data) {
-			var age = data[0].weeks[0].w;
-			age = window.moment.unix(age).fromNow(true);
+	getRepoAge(url, function (data) {
+		var age = data[0].weeks[0].w;
+		age = window.moment.unix(age).fromNow(true);
 
-			var repoAge = document.createElement('span');
-			repoAge.textContent = ' (' + age + ')';
-			repoAge.style.fontSize = '16px';
-			repoAge.style.color = '#aaa';
-			repoName.parentNode.insertBefore(repoAge, repoName.nextSibling);
-		});
+		var repoAge = document.createElement('span');
+		repoAge.textContent = ' (' + age + ')';
+		repoAge.style.fontSize = '16px';
+		repoAge.style.color = '#aaa';
+		repoName.parentNode.insertBefore(repoAge, repoName.nextSibling);
+	});
 }
 
 document.addEventListener('DOMContentLoaded', insertRepoAge);

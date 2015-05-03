@@ -5,7 +5,7 @@
 	<key>Author</key>
 	<string>Glen Huang</string>
 	<key>Builder Version</key>
-	<string>9537.75.14</string>
+	<string>10600.5.17</string>
 	<key>CFBundleDisplayName</key>
 	<string>github-repo-age</string>
 	<key>CFBundleIdentifier</key>
@@ -31,6 +31,8 @@
 	</dict>
 	<key>Description</key>
 	<string>Show GitHub repo age</string>
+	<key>DeveloperIdentifier</key>
+	<string>SG27G835W8</string>
 	<key>ExtensionInfoDictionaryVersion</key>
 	<string>1.0</string>
 	<key>Permissions</key>
