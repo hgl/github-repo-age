@@ -6,7 +6,7 @@ A safari extension to display GitHub's repo age beside the repo title.
 
 ## Installation
 
-[Download and install](https://github.com/hgl/github-repo-age/releases/download/1.0/github-repo-age.safariextz) the extension
+Download and install the lastest extension from [the release page](https://github.com/hgl/github-repo-age/releases).
 
 ## Manual Installation
 
