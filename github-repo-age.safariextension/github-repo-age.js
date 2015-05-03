@@ -10,12 +10,12 @@ function getRepoAge(url, callback) {
 			return;
 		}
 
-		if (xhr.status != 200 || !xhr.responseText) return;
+		if (xhr.status < 200 || xhr.status >= 300) return;
 
-		var data = JSON.parse(xhr.responseText);
+		var data = xhr.response;
 		callback(data);
 	};
-
+	xhr.responseType = "json"
 	xhr.open('GET', url, true);
 	xhr.send();
 }
