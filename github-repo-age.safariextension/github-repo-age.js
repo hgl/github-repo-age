@@ -17,6 +17,7 @@ function getRepoAge(url, callback) {
 	};
 	xhr.responseType = "json"
 	xhr.open('GET', url, true);
+	xhr.setRequestHeader('Accept', 'application/json');
 	xhr.send();
 }
 
@@ -30,7 +31,13 @@ function insertRepoAge() {
 	if (!repoName) return;
 
 	getRepoAge(url, function (data) {
-		var age = data[0].weeks[0].w;
+		var age;
+		try {
+			age = data[0].weeks[0].w;
+		} catch (_) {
+			console.warn("Unable to access repo age data", data);
+			return;
+		}
 		age = window.moment.unix(age).fromNow(true);
 
 		var repoAge = document.createElement('span');
